@@ -3,6 +3,7 @@ import "./Tooltip.css";
 
 const Tooltip = (props) => {
   let timeout;
+  const tooltipRef = useRef();
   const [visible, setVisible] = useState(false);
   const [position, setPosition] = useState(null);
 
