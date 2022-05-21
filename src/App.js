@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Tooltip from "./Tooltip/Tooltip";
+import "./App.css";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Try hovering elements in page</h1>
+
+      <div className="example-wrapper top-left">
+        <Tooltip content="Some Text">
+          <label>Label</label>
+          <input type="text"/>
+        </Tooltip>
+      </div>
+
+      <div className="example-wrapper top-right">
+        <Tooltip content="Some other text!">
+          <p>
+            Lorem ipsum dolor sit amet
+          </p>
+        </Tooltip>
+      </div>
+
+      <div className="example-wrapper">
+        <Tooltip content={<> <button>Hello</button></> } delay={1000}>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam consectetur id incidunt porro quam quis,
+            repudiandae saepe sapiente tempore. Atque dolorem eaque fugit ipsa ipsam libero maiores nam repudiandae!
+          </p>
+        </Tooltip>
+      </div>
+
+      <div className="example-wrapper bottom-left">
+        <Tooltip content="Some Text">
+          <button>Hover me</button>
+        </Tooltip>
+      </div>
+
+      <div className="example-wrapper bottom-right">
+        <Tooltip content="Some Text">
+          Bottom Right
+        </Tooltip>
+      </div>
     </div>
   );
 }
-
-export default App;
